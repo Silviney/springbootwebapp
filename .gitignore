@@ -9,7 +9,9 @@ target/
 .classpath
 .factorypath
 .project
+.readme
 .settings
+.prints-projeto
 .springBeans
 .sts4-cache
 
