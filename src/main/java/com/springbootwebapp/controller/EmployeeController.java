@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springbootwebapp.entity.Employee;
@@ -44,6 +45,16 @@ public class EmployeeController {
 		eRepo.save(employee);
 		return "redirect:/list";
 	}
+	
+	@GetMapping("/showUpdateForm")
+	public ModelAndView showUpdateForm(@RequestParam Long employeeId) {
+		ModelAndView mav = new ModelAndView("add-employee-form");
+		Employee employee = eRepo.findById(employeeId).get();
+		mav.addObject("employee", employee);
+		return mav;
+	}
+	
+	
 	
 
 }

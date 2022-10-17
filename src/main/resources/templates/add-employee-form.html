@@ -24,6 +24,8 @@
 				<label for="exampleFormControlInput1">Department:</label>
 				<input type="text" th:field="*{Department}" placeholder="Enter Department" class="form-control col-4 mb-4" />
 				
+				<input type="hidden" th:field="*{id}"/>
+				
 				<button class="btn btn-primary" type="submit">Save</button>
 				
 		</form>

@@ -24,6 +24,8 @@
 					<th>Email</th>
 					<th>Department</th>
 					<th>Update</th>
+					<th>Delete</th>
+
 				</tr>
 			</thead>
 			<tbody>
@@ -31,9 +33,13 @@
 					<td th:text="${employee.name}"></td>
 					<td th:text="${employee.email}"></td>
 					<td th:text="${employee.department}"></td>
+					<td class="text-center"><a th:href="@{/showUpdateForm(employeeId=${employee.id})}"><span class="material-icons">
+								update
+							</span></a></td>
 					<td class="text-center"><a th:href="@{/list}"><span class="material-icons">
-							update
-						</span></a></td>
+								delete
+							</span></a></td>
+					
 				</tr>
 			</tbody>
 
